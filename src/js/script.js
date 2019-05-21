@@ -1,3 +1,5 @@
+// It's solution from https://next.plnkr.co/edit/M07DE356nULPOru8v3Om?p=preview&preview
+
 const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
