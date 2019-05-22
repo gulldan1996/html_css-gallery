@@ -1,29 +1,11 @@
 const largeImg = document.getElementById('largeImg');
 const thumbs = document.getElementById('thumbs');
 
-thumbs.onclick = function(event) {
-  let target = event.target;
-
-  while (target != this) {
-
-  if (target.nodeName == 'A') {
-    showThumbnail(target.href, target.title);
-    return false;
+thumbs.addEventListener("click", (e) => {
+  e.preventDefault();
+  target = e.target;
+  if (target.tagName === 'IMG') {
+    largeImg.src = target.parentNode.href
   }
+});
 
-  target = target.parentNode;
-  }
-
-}
-
-function showThumbnail(href, title) {
-  largeImg.src = href;
-  largeImg.alt = title;
-}
-
-let imgs = thumbs.getElementsByTagName('img');
-for (let i = 0; i < imgs.length; i++) {
-  let url = imgs[i].parentNode.href;
-  let img = document.createElement('img');
-  img.src = url;
-}
